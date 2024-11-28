@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try If You Can</title>
+    <style>
+        .container {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .copy-text {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            cursor: text;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div id="text-to-copy" class="copy-text" contenteditable="true">
+            Hello there! Think you’ve got what it takes? Try to copy-paste me—I dare you! 
+        </div>
+
+        <div class="message" id="copy-message"></div>
+    </div>
+
+    <script>
+        document.getElementById('text-to-copy').addEventListener('copy', function(e) {
+            e.preventDefault();  
+
+            const textToCopy = "Hello Buddy";
+
+            if (e.clipboardData) {
+                e.clipboardData.setData('text/plain', textToCopy); 
+            }
+
+            
+        });
+    </script>
+</body>
+</html>
